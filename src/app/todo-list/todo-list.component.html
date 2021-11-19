@@ -1,0 +1,13 @@
+<app-todo
+    *ngFor="let todo of todos; let i = index"
+    [name]="todo.name"
+    [done]="todo.done"
+    (doneToggled)="toggleTodoDone(i)"
+    (nameChanged)="renameTodo(i, $event.value)"
+    (deleted)="deleteTodo(i)">
+</app-todo>
+<div *ngIf="todos.length == 0" class="center">
+    <span>No Todos created yet!</span>
+    <br>
+    <button mat-raised-button color="primary" (click)="addTodo()" class="hcenter">New</button>
+</div>

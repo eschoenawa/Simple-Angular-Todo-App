@@ -1,0 +1,14 @@
+<mat-card (click)="toggleExpand()">
+    <mat-checkbox color="primary" [checked]="done" (click)="$event.preventDefault(); $event.stopPropagation(); toggleDone()"></mat-checkbox>
+    <mat-card-title [ngClass]="done ? 'strikethrough' : 'null'">
+        {{ name }}
+    </mat-card-title>
+    <mat-form-field *ngIf="expanded">
+        <mat-label>New Todo name</mat-label>
+        <input matInput type="text" [(ngModel)]="nameTextFieldContent" (click)="$event.stopPropagation()">
+    </mat-form-field>
+    <mat-card-actions *ngIf="expanded">
+        <button mat-raised-button color="primary" (click)="$event.stopPropagation();save()" [disabled]="nameTextFieldContent == ''">Save</button>
+        <button mat-button color="warn" (click)="$event.stopPropagation();delete()">Delete</button>
+    </mat-card-actions>
+</mat-card>
