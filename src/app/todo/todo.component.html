@@ -1,5 +1,5 @@
 <mat-card (click)="toggleExpand()">
-    <mat-checkbox color="primary" [checked]="done" (click)="$event.preventDefault(); $event.stopPropagation(); toggleDone()"></mat-checkbox>
+    <mat-checkbox color="primary" [checked]="done" (change)="toggleDone()" (click)="$event.stopPropagation()"></mat-checkbox>
     <mat-card-title [ngClass]="done ? 'strikethrough' : 'null'">
         {{ name }}
     </mat-card-title>

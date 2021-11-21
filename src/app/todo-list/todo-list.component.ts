@@ -11,12 +11,12 @@ import { TodoService } from '../todo-service/todo.service'
 export class TodoListComponent implements OnInit {
 
   todos: TodoData[] = Array(0)
-  todoObserver!: Observable<TodoData[]>
+  todoObservable!: Observable<TodoData[]>
 
   constructor(private _todoService: TodoService) { }
 
   ngOnInit() {
-    this.todoObserver = this._todoService.getTodos()
+    this.todoObservable = this._todoService.getTodos()
     this.getTodoData()
   }
 
@@ -33,7 +33,7 @@ export class TodoListComponent implements OnInit {
   }
 
   getTodoData() {
-    this.todoObserver.subscribe((todoData: TodoData[]) => {
+    this.todoObservable.subscribe((todoData: TodoData[]) => {
       this.todos = todoData
     })
   }

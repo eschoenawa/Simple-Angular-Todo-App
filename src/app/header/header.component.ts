@@ -5,7 +5,7 @@ import { TodoService } from '../todo-service/todo.service';
   selector: 'app-header',
   template: `
     <mat-toolbar color="primary">
-      <span>Angular Todo App</span>
+      <h1>Angular Todo App</h1>
       <span class="spacer"></span>
       <button mat-button (click)="newTodo()">New</button>
     </mat-toolbar>

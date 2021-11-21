@@ -14,6 +14,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { HeaderComponent } from './header/header.component';
+import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { HeaderComponent } from './header/header.component';
     MatButtonModule,
     MatInputModule,
     FormsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatFormFieldModule
   ],
   providers: [TodoService],
   bootstrap: [AppComponent]

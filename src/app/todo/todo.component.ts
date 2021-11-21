@@ -17,6 +17,7 @@ export class TodoComponent {
   expanded: boolean = false
 
   toggleDone() {
+    this.done = !this.done
     this.doneToggled.emit()
   }
 
